@@ -14,6 +14,28 @@ router.get('/marca', (req,res)=>{
   });
 });
 
+router.get('/users',(req, res)=>{
+  marca.findAll()
+    .then((result)=>{
+      console.log(result);
+    })
+    .catch((err)=>{
+      console.log("Error: ", err);
+    });
+});
+
+router.post('/marca',(req,res)=>{
+  marca.create({
+    descricao: req.params.descricao
+  })
+    .then(()=>{
+      res.redirect('listaCadastros');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ", err);
+    });
+});
+
 router.get('/carroceria', (req,res)=>{
   res.render('cadastrarCarroceria',{
     message: 'Cadastrar Carroceria'
