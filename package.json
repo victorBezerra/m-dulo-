@@ -1,0 +1,26 @@
+{
+  "name": "transport",
+  "version": "1.0.0",
+  "description": "módulo transporte",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorBezerra/transport.git"
+  },
+  "author": "Victor Bezerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorBezerra/transport/issues"
+  },
+  "homepage": "https://github.com/victorBezerra/transport#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1",
+    "pug": "^2.0.3",
+    "sequelize": "^4.38.0"
+  }
+}

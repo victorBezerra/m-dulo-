@@ -1,0 +1,10 @@
+html
+  head
+    title
+      
+  body
+    h1= message
+    form(method ="post", action="/cadastrar/marca")
+      input(type="text", name="id")
+      input(type="text", name="descricao")
+      input(type="submit", value="save")
