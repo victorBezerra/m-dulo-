@@ -1,0 +1,9 @@
+html
+  head
+    title= message
+      
+  body
+    h1= message
+    form(method ="post", action="/cadastrar/carroceria")
+      input(type="text", name="descricao")
+      input(type="submit", value="save")
