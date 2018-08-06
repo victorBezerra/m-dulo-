@@ -8,6 +8,8 @@ var Carroceria = sequelize.define('carroceria',{
   },
   descricao:{
     type: Sequelize.STRING
+  },{
+    timestamps: false
   }
 });
 
