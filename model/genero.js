@@ -1,14 +1,17 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root@localhost3306/transporte');
+const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
 var Genero = sequelize.define('genero',{
   id:{
     type: Sequelize.BIGINT,
-    primaryKey: true
+    primaryKey: true,
+    autoIncrement: true
   },
   descricao:{
     type: Sequelize.TEXT
   }
+},{
+  timestamps: false
 });
 
 module.exports = Genero;

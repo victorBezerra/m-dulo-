@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const marca = require('./../model/marca.js')
+const marca = require('./../model/marca.js');
+const carroceria = require('./../model/carroceria.js');
+const genero = require('./../model/genero.js');
+const tipo = require('./../model/tipo.js');
+const especie = require('./../model/especie.js');
 
 router.get('/', (req,res)=>{
   res.render('listaCadastros',{
@@ -30,10 +34,30 @@ router.get('/carroceria', (req,res)=>{
   });
 });
 
+router.post('/carroceria',(req,res)=>{
+  carroceria.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar')
+    })
+    .catch((err)=>{
+      console.log("Erro: ", err);
+    });
+});
+
 router.get('/genero', (req,res)=>{
   res.render('cadastrarGenero',{
     message: 'Cadastrar Genero'
   });
+});
+
+router.post('/genero', (req,res)=>{
+  genero.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    });
 });
 
 router.get('/tipo', (req,res)=>{
@@ -42,10 +66,30 @@ router.get('/tipo', (req,res)=>{
   });
 });
 
+router.post('/tipo',(req,res)=>{
+  tipo.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ", err);
+    });
+});
+
 router.get('/especie', (req,res)=>{
   res.render('cadastrarEspecie',{
     message: 'Cadastrar Especie'
   });
+});
+
+router.post('/especie', (req,res)=>{
+  especie.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ", err);
+    });
 });
 
 router.get('/modelo', (req,res)=>{
