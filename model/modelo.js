@@ -7,31 +7,31 @@ var Modelo = sequelize.define('modelo',{
     primaryKey:true,
     autoIncrement: true
   },
-  idEspecie:{
+  id_marca:{
     type: Sequelize.BIGINT,
     foreingKey: true
   },
-  idCarroceria:{
+  id_tipo:{
     type: Sequelize.BIGINT,
     foreingKey: true
   },
-  idMarca:{
+  id_carroceria:{
     type: Sequelize.BIGINT,
     foreingKey: true
   },
-  idTipo:{
+  id_genero:{
     type: Sequelize.BIGINT,
     foreingKey: true
   },
-  idGenero:{
+  id_especie:{
     type: Sequelize.BIGINT,
     foreingKey: true
-  },
-  ativo:{
-    type: Sequelize.STRING
   },
   descricao:{
     type: Sequelize.TEXT
+  },
+  ativo:{
+    type: Sequelize.STRING
   }
 },{
   timestamps: false

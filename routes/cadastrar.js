@@ -5,6 +5,7 @@ const carroceria = require('./../model/carroceria.js');
 const genero = require('./../model/genero.js');
 const tipo = require('./../model/tipo.js');
 const especie = require('./../model/especie.js');
+const modelo = require('./../model/modelo.js')
 
 router.get('/', (req,res)=>{
   res.render('listaCadastros',{
@@ -93,10 +94,34 @@ router.post('/especie', (req,res)=>{
 });
 
 router.get('/modelo', (req,res)=>{
-  res.render('cadastrarModelo',{
-    message: 'Cadastrar Modelo'
-  });
+  Promise.all([
+    marca.findAll(),
+    carroceria.findAll(),
+    genero.findAll(),
+    especie.findAll(),
+    tipo.findAll()
+  ])
+  .then((result)=>{
+    const marcas = result[0];
+    const carrocerias = result[1];
+    const generos = result[2];
+    const especies = result[3];
+    const tipos = result[4];
+    res.render('cadastrarModelo',{
+      message: "Cadastrar Modelo",
+      marcas, carrocerias, generos, especies, tipos});
+  })
 });
+
+router.post('/modelo', (req,res)=>{
+  modelo.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("Erro: ",err);
+    })
+})
 
 router.get('/combustivel', (req,res)=>{
   res.render('cadastrarCombustivel',{

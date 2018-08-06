@@ -5,5 +5,36 @@ html
   body
     h1= message
     form(method ="post", action="/cadastrar/modelo")
-      input(type="text", name="descricao")
+      label(for="marcas") Marcas:
+      select(name="id_marca")
+        each marca, index in marcas
+          option(value='1') #{marca.descricao}
+      br
+      label(for="carrocerias") Carrocerias:
+      select(name="id_carroceria")
+        each carroceria,index in carrocerias
+          option(value=carroceria.id) #{carroceria.descricao}
+      br    
+      label(for="") Generos: 
+      select(name="id_genero")
+        each genero,index in generos
+          option(value=genero.id) #{genero.descricao}
+      br
+      label(for="") Tipos: 
+      select(name="id_tipo")
+        each tipo,index in tipos
+          option(value=tipo.id) #{tipo.descricao} 
+      br
+      label(for="") Espécies:
+      select(name="id_especie")
+        each especie,index in especies
+          option(value=especie.id) #{especie.descricao}
+      br
+      label(for="descricao") Descrição
+        input(id="descricao" type="text", name="descricao")
       input(type="submit", value="save")
+      br
+      label(for="") Ativo:
+      select(name="ativo")
+        option(value="S") Sim
+        option(value="N") Não
