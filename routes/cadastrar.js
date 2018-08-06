@@ -5,7 +5,8 @@ const carroceria = require('./../model/carroceria.js');
 const genero = require('./../model/genero.js');
 const tipo = require('./../model/tipo.js');
 const especie = require('./../model/especie.js');
-const modelo = require('./../model/modelo.js')
+const modelo = require('./../model/modelo.js');
+const motorista = require('./../model/motorista.js');
 
 router.get('/', (req,res)=>{
   res.render('listaCadastros',{
@@ -159,11 +160,13 @@ router.get('/motorista', (req,res)=>{
   });
 });
 
-
-// router.get('/marca', (req,res)=>{
-//   res.render('listaMarca',{
-//     message: 'Teste'
-//   })
-// });
-
+router.post('/motorista',(req,res)=>{
+  motorista.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("Erro: ", err);
+    });
+});
 module.exports = router;
