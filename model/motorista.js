@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
+
 var Motorista = sequelize.define('motoristas',{
   nome:{
     type: Sequelize.TEXT
@@ -9,7 +10,8 @@ var Motorista = sequelize.define('motoristas',{
     type: Sequelize.TEXT
   },
   cpf:{
-    type: Sequelize.BIGINT
+    type: Sequelize.BIGINT,
+    primaryKey: true
   },
   insEstadual:{
     type: Sequelize.BIGINT
@@ -48,6 +50,7 @@ var Motorista = sequelize.define('motoristas',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

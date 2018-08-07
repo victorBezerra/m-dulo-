@@ -7,14 +7,15 @@ const tipo = require('./../model/tipo.js');
 const especie = require('./../model/especie.js');
 const modelo = require('./../model/modelo.js');
 const motorista = require('./../model/motorista.js');
+const veiculo = require('./../model/veiculo.js');
 
-router.get('/', (req,res)=>{
+router.get('/',(req,res)=>{
   res.render('listaCadastros',{
     message: 'Lista de cadastros'
   });
 });
 
-router.get('/marca', (req,res)=>{
+router.get('/marca',(req,res)=>{
   res.render('cadastrarMarca',{
     message: 'Cadastrar Marca'
   });
@@ -30,7 +31,7 @@ router.post('/marca',(req,res)=>{
     });
 });
 
-router.get('/carroceria', (req,res)=>{
+router.get('/carroceria',(req,res)=>{
   res.render('cadastrarCarroceria',{
     message: 'Cadastrar Carroceria'
   });
@@ -46,13 +47,13 @@ router.post('/carroceria',(req,res)=>{
     });
 });
 
-router.get('/genero', (req,res)=>{
+router.get('/genero',(req,res)=>{
   res.render('cadastrarGenero',{
     message: 'Cadastrar Genero'
   });
 });
 
-router.post('/genero', (req,res)=>{
+router.post('/genero',(req,res)=>{
   genero.create(req.body)
     .then(()=>{
       res.redirect('/cadastrar');
@@ -62,7 +63,7 @@ router.post('/genero', (req,res)=>{
     });
 });
 
-router.get('/tipo', (req,res)=>{
+router.get('/tipo',(req,res)=>{
   res.render('cadastrarTipo',{
     message: 'Cadastrar Tipo'
   });
@@ -78,13 +79,13 @@ router.post('/tipo',(req,res)=>{
     });
 });
 
-router.get('/especie', (req,res)=>{
+router.get('/especie',(req,res)=>{
   res.render('cadastrarEspecie',{
     message: 'Cadastrar Especie'
   });
 });
 
-router.post('/especie', (req,res)=>{
+router.post('/especie',(req,res)=>{
   especie.create(req.body)
     .then(()=>{
       res.redirect('/cadastrar');
@@ -94,7 +95,7 @@ router.post('/especie', (req,res)=>{
     });
 });
 
-router.get('/modelo', (req,res)=>{
+router.get('/modelo',(req,res)=>{
   Promise.all([
     marca.findAll(),
     carroceria.findAll(),
@@ -114,7 +115,7 @@ router.get('/modelo', (req,res)=>{
   })
 });
 
-router.post('/modelo', (req,res)=>{
+router.post('/modelo',(req,res)=>{
   modelo.create(req.body)
     .then(()=>{
       res.redirect('/cadastrar');
@@ -124,37 +125,87 @@ router.post('/modelo', (req,res)=>{
     })
 })
 
-router.get('/combustivel', (req,res)=>{
+router.get('/combustivel',(req,res)=>{
   res.render('cadastrarCombustivel',{
     message: 'Cadastrar Combustivel'
   });
 });
 
-router.get('/status', (req,res)=>{
+router.post('/combustivel',(req,res)=>{
+  combustivel.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    })
+});
+
+router.get('/status',(req,res)=>{
   res.render('cadastrarStatus',{
     message: 'Cadastrar Status'
   });
 });
 
-router.get('/propriedade', (req,res)=>{
+router.post('/status',(req,res)=>{
+  status.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    });
+});
+
+router.get('/propriedade',(req,res)=>{
   res.render('cadastrarPropriedade',{
     message: 'Cadastrar Propriedade'
   });
 });
 
-router.get('/cor', (req,res)=>{
+router.post('/propriedade',(req,res)=>{
+  propriedade.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    })
+});
+
+router.get('/cor',(req,res)=>{
   res.render('cadastrarCor',{
     message: 'Cadastrar Cor'
   });
 });
 
-router.get('/veiculo', (req,res)=>{
+router.post('/cor',(req,res)=>{
+  cor.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar')
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    })
+});
+
+router.get('/veiculo',(req,res)=>{
   res.render('cadastrarVeiculo',{
     message: 'Cadastrar Veiculo'
   });
 });
 
-router.get('/motorista', (req,res)=>{
+router.post('/veiculo',(req,res)=>{
+  veiculo.create(req.body)
+    .then(()=>{
+      res.redirect('/cadastrar');
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    })
+})
+
+router.get('/motorista',(req,res)=>{
   res.render('cadastrarMotorista',{
     message: 'Cadastrar Motorista'
   });
@@ -169,4 +220,5 @@ router.post('/motorista',(req,res)=>{
       console.log("Erro: ", err);
     });
 });
+
 module.exports = router;

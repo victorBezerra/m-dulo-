@@ -2,39 +2,39 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize ('mysql://root@localhost:3306');
 
 var Veiculo = sequelize.define('veiculos',{
-  id{
+  id:{
     type: Sequelize.BIGINT,
     primaryKey: true,
     autoIncrement: true
   },
-  placa{
+  placa:{
     type: Sequelize.TEXT
   },
-  descricao{
+  descricao:{
     type: Sequelize.BIGINT
   },
-  qtd_max_pass{
+  qtd_max_pass:{
     type: Sequelize.BIGINT
   },
-  ano_modelo{
+  ano_modelo:{
     type: Sequelize.INTEGER
   },
-  ano_fabricacao{
+  ano_fabricacao:{
     type: Sequelize.INTEGER
   },
-  id_modelo{
+  id_modelo:{
     type:Sequelize.BIGINT
   },
-  id_cor{
+  id_cor:{
     type:Sequelize.BIGINT
   },
-  id_combustivel{
+  id_combustivel:{
     type:Sequelize.BIGINT
   },
-  id_propriedade{
+  id_propriedade:{
     type:Sequelize.BIGINT
   },
-  id_status{
+  id_status:{
     type:Sequelize.BIGINT
   }
 },{
