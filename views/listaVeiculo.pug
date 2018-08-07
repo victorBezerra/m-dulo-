@@ -1,0 +1,41 @@
+html
+Node Template Engine
+  head
+    title= message
+      
+  body
+    h1= message
+    table(border="1")
+      tbody
+        th descricao
+        th placa
+        th qtd_max_pass
+        th qtd_max_pass
+        th ano_fabricacao
+        th Endereço
+        th Bairro
+        th Cidade
+        th Estado
+        th CEP
+        th Email
+        th Site
+        th Telefone
+        th NIT
+        th Tipo
+      tbody
+        each motorista, index in motoristas
+          td #{motorista.nome}
+          td #{motorista.nomeFantasia}
+          td #{motorista.cpf}
+          td #{motorista.insEstadual}
+          td #{motorista.representante}
+          td #{motorista.endereco}
+          td #{motorista.bairro}
+          td #{motorista.cidade}
+          td #{motorista.estado}
+          td #{motorista.cep}
+          td #{motorista.email}
+          td #{motorista.site}
+          td #{motorista.telefone}
+          td #{motorista.nit}
+          td #{motorista.tipo}
