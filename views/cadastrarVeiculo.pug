@@ -5,5 +5,52 @@ html
   body
     h1= message
     form(method ="post", action="/cadastrar/veiculo")
-      input(type="text", name="descricao")
+      label(for="modelo") Modelos
+      select(id="modelo" name="id_modelo")
+        option
+          each modelo, index in modelos
+            option(value=modelo.id) #{modelo.descricao}
+      br
+      label(for="cor") Cores
+      select(id="cor", name="id_cor")
+        option
+          each cor, index in cores
+              option(value= cor.id) #{cor.descricao}
+      br
+      label(for="combustivel") Combustiveis
+      select(id="combustivel", name="id_combustivel") 
+        option
+          each combustivel, index in combustiveis
+            option(value=combustivel.id) #{combustivel.descricao}
+      br
+      label(for="propriedade") Propriedades
+      select(id="propriedade", name="id_propriedade")
+        option
+          each propriedade, index in propridades
+            option(value=propriedade.id) #{propriedade.descricao}
+      br 
+      label(for="status") Status
+      select(id="status", name="id_status")
+        option
+          each statu, index in status
+            option(value=statu.id) #{statu.descricao}
+      br
+      
+      label(for="placa") Placa
+      input(id="placa", type="text", name="placa")
+      br
+      label(for="qtd_max_pass") Capacidade máxima
+      input(id="qtd_max_pass", type="text", name="qtd_max_pass")
+      br
+      
+      label(for="ano_modelo") Ano do modelo
+      input(id="ano_modelo", type="text", name="ano_modelo")
+      br
+      
+      label(for="ano_fabricacao") Ano de fabricação
+      input(id="ano_fabricacao", type="text", name="ano_fabricacao")
+      br
+      
+      label(for="descricao") Descrição
+      input(id="descricao", type="text", name="descricao")
       input(type="submit", value="save")

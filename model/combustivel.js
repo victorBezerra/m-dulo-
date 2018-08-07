@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
-var Combustivel = sequelize.define('Combustiveis',{
+var Combustivel = sequelize.define('combustiveis',{
   id:{
     type: Sequelize.BIGINT,
     primaryKey:true,
@@ -11,6 +11,7 @@ var Combustivel = sequelize.define('Combustiveis',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

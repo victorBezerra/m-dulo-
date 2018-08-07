@@ -11,6 +11,7 @@ var Status = sequelize.define('status',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

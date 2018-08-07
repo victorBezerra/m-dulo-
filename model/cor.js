@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('mysql://root@localhost:3306');
+const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
 var Cor = sequelize.define('cores',{
   id:{

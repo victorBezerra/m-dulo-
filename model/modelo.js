@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
-var Modelo = sequelize.define('modelo',{
+var Modelo = sequelize.define('modelos',{
   id:{
     type: Sequelize.BIGINT,
     primaryKey:true,
@@ -34,6 +34,7 @@ var Modelo = sequelize.define('modelo',{
     type: Sequelize.STRING
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

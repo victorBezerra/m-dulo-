@@ -8,6 +8,11 @@ const especie = require('./../model/especie.js');
 const modelo = require('./../model/modelo.js');
 const motorista = require('./../model/motorista.js');
 const veiculo = require('./../model/veiculo.js');
+const combustivel = require('./../model/combustivel.js');
+const status = require('./../model/status.js');
+const propriedade = require('./../model/propriedade.js');
+const cor = require('./../model/cor.js');
+
 
 router.get('/',(req,res)=>{
   res.render('listaCadastros',{
@@ -190,9 +195,25 @@ router.post('/cor',(req,res)=>{
 });
 
 router.get('/veiculo',(req,res)=>{
-  res.render('cadastrarVeiculo',{
-    message: 'Cadastrar Veiculo'
-  });
+  Promise.all([
+    modelo.findAll(),
+    cor.findAll(),
+    combustivel.findAll(),
+    propriedade.findAll(),
+    status.findAll()
+  ])
+  .then((result)=>{
+    var modelos = result[0];
+    var cores = result[1];
+    var combustiveis = result[2];
+    var propridades = result[3];
+    var status = result[4];
+    res.render('cadastrarVeiculo',{
+      message: 'Cadastrar Veiculo',
+      modelos, cores, combustiveis, propridades, status
+    });
+  })
+  .catch();
 });
 
 router.post('/veiculo',(req,res)=>{

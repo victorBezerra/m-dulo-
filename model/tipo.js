@@ -11,6 +11,7 @@ var Tipo = sequelize.define('tipo',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

@@ -11,6 +11,7 @@ var Genero = sequelize.define('genero',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

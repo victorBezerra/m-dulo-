@@ -11,6 +11,7 @@ var Especie = sequelize.define('especie',{
     type: Sequelize.BIGINT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize ('mysql://root@localhost:3306');
+const sequelize = new Sequelize ('mysql://root@localhost:3306/transporte');
 
 var Veiculo = sequelize.define('veiculos',{
   id:{
@@ -38,6 +38,7 @@ var Veiculo = sequelize.define('veiculos',{
     type:Sequelize.BIGINT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

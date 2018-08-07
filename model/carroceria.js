@@ -11,6 +11,7 @@ var Carroceria = sequelize.define('carrocerias',{
     type: Sequelize.STRING
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 

@@ -11,6 +11,7 @@ const Marca = sequelize.define('marcas',{
     type: Sequelize.TEXT
   }
 },{
+  freezeTableName: true,
   timestamps: false
 });
 
