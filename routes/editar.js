@@ -63,7 +63,6 @@ router.get('/veiculo/:id',(req,res)=>{
     status.findAll()
   ])
   .then((result)=>{
-    console.log(result[5]);
     var veiculos = result[0];
     var modelos = result[1];
     var cores = result[2];
@@ -79,5 +78,19 @@ router.get('/veiculo/:id',(req,res)=>{
     console.log("ERROR: ",err);
   });
 });
+
+router.post('/veiculo/:id',(req,res)=>{
+  veiculo.update(req.body,{
+    where:{
+      id: req.params.id
+    }
+  })
+    .then(()=>{
+      res.redirect('/listar')
+    })
+    .catch((err)=>{
+      console.log("ERRO: ",err);
+    });
+})
 
 module.exports = router;

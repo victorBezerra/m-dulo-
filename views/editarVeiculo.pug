@@ -4,39 +4,39 @@ html
       
   body
     h1= message
-    form(method ="post", action="/cadastrar/veiculo")
+    form(method ="post", action="/editar/veiculo/"+veiculos.id)
       label(for="modelo") Modelos
       select(id="modelo" name="id_modelo")
         each modelo, index in veiculos.modelos
-          option #{modelo.descricao}
-            each model, index in modelos
-              option(value=model.id) #{model.descricao}
+          option(value=modelo.id) #{modelo.descricao}
+            each modelo, index in modelos
+              option(value=modelo.id) #{modelo.descricao}
       br
       label(for="cor") Cores
       select(id="cor", name="id_cor")
         each cor, index in veiculos.cores
-          option #{cor.descricao}
+          option(value= cor.id) #{cor.descricao}
             each cor, index in cores
                 option(value= cor.id) #{cor.descricao}
       br
       label(for="combustivel") Combustiveis
       select(id="combustivel", name="id_combustivel") 
         each combustivel, index in veiculos.combustiveis
-          option #{combustivel.descricao}
+          option(value= combustivel.id) #{combustivel.descricao}
             each combustivel, index in combustiveis
                 option(value= combustivel.id) #{combustivel.descricao}     
       br
       label(for="propriedade") Propriedades
       select(id="propriedade", name="id_propriedade")
         each propriedade, index in veiculos.propriedades
-          option #{propriedade.descricao}
+          option(value= propriedade.id) #{propriedade.descricao}
             each propriedade, index in propridades
                 option(value= propriedade.id) #{propriedade.descricao}
       br 
       label(for="status") Status
       select(id="status", name="id_status")
         each stat, index in veiculos.statuses
-          option #{stat.descricao}
+          option(value= stat.id) #{stat.descricao}
             each stat, index in status         
               option(value= stat.id) #{stat.descricao}
       br
