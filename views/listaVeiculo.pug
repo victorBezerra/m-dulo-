@@ -35,4 +35,4 @@ html
           each status, index in veiculo.statuses
             td #{status.descricao}
           td: a(href="/editar/veiculo/"+veiculo.id) Editar
-          td: a(href="") Excluir
+          td: a(href="/excluir/veiculo/"+veiculo.id) Excluir
