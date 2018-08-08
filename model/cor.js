@@ -10,7 +10,12 @@ var Cor = sequelize.define('cores',{
     field: 'id'
   },
   descricao:{
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   }
 },{
   freezeTableName: true,

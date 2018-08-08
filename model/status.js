@@ -8,7 +8,12 @@ var Status = sequelize.define('status',{
     autoIncrement: true
   },
   descricao:{
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   }
 },{
   freezeTableName: true,

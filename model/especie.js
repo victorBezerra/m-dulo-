@@ -8,7 +8,12 @@ var Especie = sequelize.define('especie',{
     autoIncrement: true
   },
   descricao:{
-    type: Sequelize.BIGINT
+    type: Sequelize.BIGINT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   }
 },{
   freezeTableName: true,

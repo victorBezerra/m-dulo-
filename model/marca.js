@@ -10,19 +10,14 @@ const Marca = sequelize.define('marcas',{
   descricao:{
     type: Sequelize.TEXT,
     validate:{
-      notEmpty: true
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
     }
   }
 },{
   freezeTableName: true,
   timestamps: false,
-  validate:{
-    isEmpty(descricao){
-      if(descricao === null){
-        throw new Erro('Preencha os campos vazios!!')
-      }
-    }
-  }
 });
 
 module.exports = Marca;
