@@ -12,30 +12,26 @@ Node Template Engine
         th qtd_max_pass
         th qtd_max_pass
         th ano_fabricacao
-        th Endereço
-        th Bairro
-        th Cidade
-        th Estado
-        th CEP
-        th Email
-        th Site
-        th Telefone
-        th NIT
-        th Tipo
+        th id_modelo
+        th id_cor
+        th id_combustivel
+        th id_propriedade
+        th id_status
+    
       tbody
-        each motorista, index in motoristas
-          td #{motorista.nome}
-          td #{motorista.nomeFantasia}
-          td #{motorista.cpf}
-          td #{motorista.insEstadual}
-          td #{motorista.representante}
-          td #{motorista.endereco}
-          td #{motorista.bairro}
-          td #{motorista.cidade}
-          td #{motorista.estado}
-          td #{motorista.cep}
-          td #{motorista.email}
-          td #{motorista.site}
-          td #{motorista.telefone}
-          td #{motorista.nit}
-          td #{motorista.tipo}
+        each veiculo, index in veiculos
+          td #{veiculo.descricao}
+          td #{veiculo.placa}
+          td #{veiculo.qtd_max_pass}
+          td #{veiculo.qtd_max_pass}
+          td #{veiculo.ano_fabricacao}
+          each modelos, index in veiculo.modelos
+            td #{modelos.descricao}
+          each cores, index in veiculo.cores
+            td #{cores.descricao}
+          each combustiveis, index in veiculo.combustiveis
+            td #{combustiveis.descricao}
+          each propriedades, index in veiculo.propriedades
+            td #{propriedades.descricao}
+          each status, index in veiculo.statuses
+            td #{status.descricao}
