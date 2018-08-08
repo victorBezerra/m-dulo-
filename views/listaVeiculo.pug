@@ -1,5 +1,4 @@
 html
-Node Template Engine
   head
     title= message
       
@@ -7,23 +6,23 @@ Node Template Engine
     h1= message
     table(border="1")
       tbody
-        th descricao
-        th placa
-        th qtd_max_pass
-        th qtd_max_pass
-        th ano_fabricacao
-        th id_modelo
-        th id_cor
-        th id_combustivel
-        th id_propriedade
-        th id_status
+        th Descricao
+        th Placa
+        th Capacidade máxima
+        th Ano do modelo
+        th Ano de Fabricaçãp
+        th Modelo
+        th Cor
+        th Combustível
+        th Propriedade
+        th Status
     
       tbody
         each veiculo, index in veiculos
           td #{veiculo.descricao}
           td #{veiculo.placa}
           td #{veiculo.qtd_max_pass}
-          td #{veiculo.qtd_max_pass}
+          td #{veiculo.ano_modelo}
           td #{veiculo.ano_fabricacao}
           each modelos, index in veiculo.modelos
             td #{modelos.descricao}
@@ -35,3 +34,5 @@ Node Template Engine
             td #{propriedades.descricao}
           each status, index in veiculo.statuses
             td #{status.descricao}
+          td: a(href="/editar/veiculo/"+veiculo.id) Editar
+          td: a(href="") Excluir

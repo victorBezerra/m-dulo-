@@ -1,0 +1,52 @@
+html
+  head
+    title= message
+      
+  body
+    h1= message
+    form(method ="post", action="/editar/motorista/"+motorista.cpf)
+      label(for="") Nome:
+      input(type="text", name="nome", value=motorista.nome)
+      br
+      label(for="") Nome Fantansia:
+      input(type="text", name="nomdeFantasia", value=motorista.nomeFantasia)
+      br
+      label(for="") CPF:
+      input(type="text", name="cpf", value=motorista.cpf)
+      br
+      label(for="") Inscrição Estadual:
+      input(type="text", name="insEstadual", value=motorista.insEstadual)
+      br
+      label(for="") Representante:
+      input(type="text", name="representante", value=motorista.representante)
+      br
+      label(for="") Endereço:
+      input(type="text", name="endereco",value=motorista.endereco)
+      br
+      label(for="") Bairro:
+      input(type="text", name="bairro", value=motorista.bairro)
+      br
+      label(for="") Cidade:
+      input(type="text", name="cidade", value=motorista.cidade)
+      br
+      label(for="") Estado:
+      input(type="text", name="estado", value="motorista.estado")
+      br
+      label(for="") CEP:
+      input(type="text", name="cep", value=motorista.cep)
+      br
+      label(for="") Email:
+      input(type="text", name="email", value=motorista.email)
+      br
+      label(for="") Site:
+      input(type="text", name="site", value=motorista.site)
+      br
+      label(for="") Telefone:
+      input(type="text", name="telefone", value=motorista.telefone)
+      br
+      label(for="") NIT:
+      input(type="text", name="nit", value=motorista.nit)
+      br
+      label(for="") Tipo:
+      input(type="text", name="tipo", value=motorista.tipo)
+      input(type="submit", value="save")

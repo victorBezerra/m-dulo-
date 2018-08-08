@@ -1,5 +1,4 @@
 html
-Node Template Engine
   head
     title= message
       
@@ -39,3 +38,5 @@ Node Template Engine
           td #{motorista.telefone}
           td #{motorista.nit}
           td #{motorista.tipo}
+          td: a(href="/editar/motorista/"+motorista.cpf) Editar
+          td: a(href="") Excluir

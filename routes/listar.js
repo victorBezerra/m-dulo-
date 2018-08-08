@@ -42,7 +42,6 @@ router.get('/veiculos',(req,res)=>{
   })
     .then((result)=>{
       var veiculos = result;
-      console.log(veiculos[0]);
       res.render('listaVeiculo',{
         message: 'Lista de veículos',
         veiculos

@@ -47,29 +47,29 @@ var Veiculo = sequelize.define('veiculos',{
   timestamps: false
 });
 
-Veiculo.hasMany(cor, {
+Veiculo.hasMany(cor,{
   foreignKey: 'id',
-  sourceKey: 'id'
+  sourceKey: 'id_cor'
 });
 
-Veiculo.hasMany(modelo, {
+Veiculo.hasMany(modelo,{
   foreignKey: 'id',
-  sourceKey: 'id'
+  sourceKey: 'id_modelo'
 });
 
-Veiculo.hasMany(combustivel, {
+Veiculo.hasMany(combustivel,{
   foreignKey: 'id',
-  sourceKey: 'id'
+  sourceKey: 'id_combustivel'
 });
 
-Veiculo.hasMany(propriedade, {
+Veiculo.hasMany(propriedade,{
   foreignKey: 'id',
-  sourceKey: 'id'
+  sourceKey: 'id_propriedade'
 });
 
-Veiculo.hasMany(status, {
+Veiculo.hasMany(status,{
   foreignKey: 'id',
-  sourceKey: 'id'
+  sourceKey: 'id_status'
 });
 
 module.exports = Veiculo;
