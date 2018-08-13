@@ -2,24 +2,29 @@ const Sequelize = require('sequelize');
 const sequelize = new Sequelize("mysql://root@localhost:3306/transporte");
 
 const Pedido = sequelize.define("pedidos",{
+  id:{
+    type: Sequelize.BIGINT,
+    primaryKey:true,
+    autoIncrement: true
+  },
   tipoTransporte:{
     type: Sequelize.BIGINT
   },
   qtdPass:{
     type: Sequelize.INTEGER
-  }
+  },
   dataPedido:{
-      type. Sequelize.DATE
+      type: Sequelize.DATE
   },
   horaPedido:{
     type: Sequelize.TIME
-  }
+  },
   solicitante:{
     type: Sequelize.INTEGER
   },
   setorSolicitante:{
     type: Sequelize.INTEGER
-  }
+  },
   localPartida:{
     type: Sequelize.TEXT
   },
@@ -37,7 +42,7 @@ const Pedido = sequelize.define("pedidos",{
   },
   horaPartida:{
     type: Sequelize.TIME
-  }
+  },
   dataChegada:{
     type: Sequelize.DATE
   },
@@ -49,7 +54,7 @@ const Pedido = sequelize.define("pedidos",{
   },
   telefone:{
     type: Sequelize.STRING
-  }
+  },
   email:{
     type: Sequelize.STRING
   },
@@ -59,6 +64,10 @@ const Pedido = sequelize.define("pedidos",{
   finalidade:{
     type: Sequelize.TEXT
   }
+  },{
+      timestamps: false,
+      freezeTableName: true
 });
+
 
 module.exports = Pedido;

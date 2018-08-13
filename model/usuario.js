@@ -9,26 +9,26 @@ const Usuario = sequelize.define("usuarios",{
   },
   nome:{
     type: Sequelize.TEXT
-  }
+  },
   cpf:{
     type: Sequelize.INTEGER
-  }
+  },
   funcao:{
     type: Sequelize.TEXT
-  }
+  },
   senha:{
     type: Sequelize.TEXT
-  }
+  },
   email:{
     type: Sequelize.TEXT
-  }
+  },
   cpf:{
     type: Sequelize.TEXT
-  }
+  },
   status:{
     type: Sequelize.TEXT
-  },
-  {
+  }
+  },{
     timestamps:false,
     freezeTableName:true
 });
