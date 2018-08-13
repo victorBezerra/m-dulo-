@@ -12,7 +12,8 @@ const combustivel = require('./../model/combustivel.js');
 const status = require('./../model/status.js');
 const propriedade = require('./../model/propriedade.js');
 const cor = require('./../model/cor.js');
-
+const usuario = require ('./../model/usuario.js');
+const setor = require ('./../model/setor.js');
 
 router.get('/',(req,res)=>{
   res.render('listaCadastros',{
@@ -239,6 +240,27 @@ router.post('/motorista',(req,res)=>{
     })
     .catch((err)=>{
       console.log("Erro: ", err);
+    });
+});
+
+router.get('/pedido', (req,res)=>{
+  Promise.all([
+    tipo.findAll(),
+    usuario.findAll(),
+    setor.findAll()
+  ])
+    .then((result)=>{
+      console.log("TESTE");
+      // var tipos = result[0];
+      // var usuarios = result[1];
+      // var setores = result[2];
+      // res.render('registrarPedido',{
+      //   message: 'Solicitação de veículo',
+      //   tipos, usuarios, setores
+      // })
+    })
+    .catch((err)=>{
+      console.log("ERROR: ", err);
     });
 });
 
