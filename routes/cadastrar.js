@@ -251,13 +251,13 @@ router.get('/pedido', (req,res)=>{
   ])
     .then((result)=>{
       console.log("TESTE");
-      // var tipos = result[0];
-      // var usuarios = result[1];
-      // var setores = result[2];
-      // res.render('registrarPedido',{
-      //   message: 'Solicitação de veículo',
-      //   tipos, usuarios, setores
-      // })
+      var tipos = result[0];
+      var usuarios = result[1];
+      var setores = result[2];
+      res.render('registrarPedido',{
+        message: 'Solicitação de veículo',
+        tipos, usuarios, setores
+      })
     })
     .catch((err)=>{
       console.log("ERROR: ", err);

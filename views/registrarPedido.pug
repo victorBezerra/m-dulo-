@@ -1,0 +1,17 @@
+html
+    title= message
+
+    body
+        h1= messge
+
+        form(method="post", action="/cadastrar/pedido")
+            label(for="Tipo") Tipo  
+            select(name="id_tipo")
+                each tipo, index in tipos
+                    option(value=id_tipo) #{descricao.tipo}
+            br
+            label(for="") Quantidade de Passageiros
+            input(type="text", name="qtdPass")
+            br 
+            label(for="") 
+            input(type="text")
