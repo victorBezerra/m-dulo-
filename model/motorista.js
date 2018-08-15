@@ -4,14 +4,32 @@ const sequelize = new Sequelize('mysql://root@localhost:3306/transporte');
 
 var Motorista = sequelize.define('motoristas',{
   nome:{
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   },
   nomeFantasia:{
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   },
   cpf:{
     type: Sequelize.BIGINT,
-    primaryKey: true
+    primaryKey: true,
+    validate:{
+      isNumeric: {
+        msg: 'Somente números'
+      },
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   },
   insEstadual:{
     type: Sequelize.BIGINT

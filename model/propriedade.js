@@ -8,7 +8,12 @@ var Propriedade = sequelize.define('propriedades',{
     autoIncrement: true
   },
   descricao:{
-    type: Sequelize.TEXT
+    type: Sequelize.TEXT,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   }
 },{
   freezeTableName: true,

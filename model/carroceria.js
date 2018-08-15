@@ -8,7 +8,12 @@ var Carroceria = sequelize.define('carrocerias',{
     autoIncrement: true
   },
   descricao:{
-    type: Sequelize.STRING
+    type: Sequelize.STRING,
+    validate:{
+      notEmpty: {
+        msg: 'Preencha os campos'
+      }
+    }
   }
 },{
   freezeTableName: true,
