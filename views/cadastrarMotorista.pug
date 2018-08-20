@@ -7,6 +7,18 @@ html
         const nome = formulario.nome.value;
         const nomeFantasia = formulario.nomeFantasia.value;
         const cpf = formulario.cpf.value;
+        const insEstadual = formulario.insEstadual.value;
+        const representante = formulario.representante.value;
+        const endereco = formulario.endereco.value;
+        const bairro = formulario.bairro.value;
+        const cidade = formulario.cidade.value;
+        const estado = formulario.estado.value;
+        const cep = formulario.cep.value;
+        const email = formulario.email.value;
+        const site = formulario.site.value;
+        const telefone = formulario.telefone.value;
+        const nit = formulario.nit.value;
+        const tipo = formulario.tipo.value;
         if(validator.isEmpty(nome)){
           alert("Campo nome vazio!");
           return false;
@@ -16,11 +28,70 @@ html
           return false;
         }
         else if(validator.isEmpty(cpf)){
-          alert("Campo cpf está vazio!");
+            alert("Campo cpf está vazio!");
+            return false;
+        }
+        else if(validator.isEmpty(insEstadual)){
+          alert("Campo inscrição estadual está vazio!");
           return false;
-        }  
-        else if(validator.isInt(cpf)){
-          alert("O campo CPF deve conter apensa números");
+        }
+        else if(validator.isEmpty(representante)){
+          alert("Campo representante está vazio!");
+          return false;  
+        }
+        else if(validator.isEmpty(endereco)){
+          alert("Campo endereço está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(bairro)){
+          alert("Campo bairro está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(cidade)){
+          alert("Campo cidade está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(estado)){
+          alert("Campo estado está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(cep)){
+          alert("Campo CEP está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(email)){
+          alert("Campo email está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(site)){
+          alert("Campo site está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(telefone)){
+          alert("Campo telefone está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(nit)){
+          alert("Campo NIT está vazio!");
+          return false;
+        }
+        else if(validator.isEmpty(tipo)){
+          alert("Campo tipo está vazio!");
+          return false;
+        }
+        else if(!validator.isInt(cpf)){
+          alert("Campo cpf deve conter apensa números");
+          return false;
+        }
+        else if(!validator.isInt(insEstadual)){
+          alert("Campo inscrição estadual deve conter apenas números");
+        }
+        else if(!validator.isInt(cep)){
+          alert("Campo CEP deve conter apenas números");
+          return false;
+        }
+        else if(!validator.isInt(nit)){
+          alert("Campo NIT deve conter apenas números");
           return false;
         }
         else
