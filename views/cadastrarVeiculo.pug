@@ -1,7 +1,15 @@
 html
   head
     title= message
-      
+    script(src="/static/javascripts/validator.min.js")
+    script.
+      function validar(){
+        const descricao = formulario.descricao.value;
+        if(validator.isEmpty(descricao)){
+          alert("Campo descricao vazio!")
+          return false
+        }
+      }      
   body
     h1= message
     form(method ="post", action="/cadastrar/veiculo", id="formulario", onsubmit="return validar();")

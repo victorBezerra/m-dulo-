@@ -1,10 +1,11 @@
 html
   head
     title= message
+    script(src="/static/javascripts/validator.min.js")
     script.
       function validar(){
         const descricao = formulario.descricao.value;
-        if(descricao==""){
+        if(validator.isEmpty(descricao)){
           alert("Campo descrição vazio!")
           return false
         }

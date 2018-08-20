@@ -1,15 +1,20 @@
 html
   head
     title= message
+    script(src="/static/javascripts/validator.min.js")
     script.
       function validar(){
+        const ativo = formulario.ativo.value;
         const descricao = formulario.descricao.value;
-        if(descricao==""){
-          alert("Campo descricao vazio!")
-          return false
-        }
+        if(validator.isEmpty(descricao)){
+          alert("Campo descricao vazio!");
+          return false;
+        } else if(validator.isEmpty(ativo)){
+          alert("Campo ativo vazio!");
+          return false;
+        } else
+          return true;
       }
-      
   body
     h1= message
     form(method ="post", action="/cadastrar/modelo", id="formulario", onsubmit="return validar();")
@@ -40,9 +45,11 @@ html
       br
       label(for="descricao") Descrição
         input(id="descricao" type="text", name="descricao")
-      input(type="submit", value="save")
       br
       label(for="") Ativo:
       select(name="ativo")
+        option
         option(value="S") Sim
         option(value="N") Não
+      br
+      input(type="submit", value="save")

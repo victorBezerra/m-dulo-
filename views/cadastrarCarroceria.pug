@@ -1,16 +1,16 @@
 html
   head
     title= message
-    script(src="/javascript/validator.min.js")
+    script(src="/static/javascripts/validator.min.js")
     script.
       function validar(){
         const descricao = formulario.descricao.value;
-        if(isEmpty(descricao){
+        if(validator.isEmpty(descricao)){
           alert("Campo descrição vazio!")
           return false
         }
       }
-      
+
   body
     h1= message
     form(method ="post", action="/cadastrar/carroceria", id="formulario", onsubmit="return validar();")
