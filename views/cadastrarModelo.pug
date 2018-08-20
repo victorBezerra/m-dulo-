@@ -1,10 +1,18 @@
 html
   head
     title= message
+    script.
+      function validar(){
+        const descricao = formulario.descricao.value;
+        if(descricao==""){
+          alert("Campo descricao vazio!")
+          return false
+        }
+      }
       
   body
     h1= message
-    form(method ="post", action="/cadastrar/modelo")
+    form(method ="post", action="/cadastrar/modelo", id="formulario", onsubmit="return validar();")
       label(for="marcas") Marcas:
       select(name="id_marca")
         each marca, index in marcas

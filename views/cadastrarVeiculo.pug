@@ -4,7 +4,7 @@ html
       
   body
     h1= message
-    form(method ="post", action="/cadastrar/veiculo")
+    form(method ="post", action="/cadastrar/veiculo", id="formulario", onsubmit="return validar();")
       label(for="modelo") Modelos
       select(id="modelo" name="id_modelo")
         option

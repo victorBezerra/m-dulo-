@@ -1,9 +1,17 @@
 html
   head
     title= message
+    script.
+      function validar(){
+        const descricao = formulario.descricao.value;
+        if(descricao==""){
+          alert("Campo descrição vazio!")
+          return false
+        }
+      }
       
   body
     h1= message
-    form(method ="post", action="/cadastrar/combustivel")
+    form(method ="post", action="/cadastrar/combustivel", id="formulario", onsubmit="return validar();")
       input(type="text", name="descricao")
       input(type="submit", value="save")
